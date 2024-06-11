@@ -13,12 +13,6 @@
 ### SET UP
 #############
 
-python -m spacy download en
-pip install svglib
-pip install pandas
-pip install fuzzywuzzy
-pip install python-Levenshtein
-
 import spacy
 import pandas as pd
 from spacy.lang.en import English
