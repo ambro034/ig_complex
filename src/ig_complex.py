@@ -48,11 +48,11 @@ from sklearn.metrics import accuracy_score
 from sklearn import metrics
 import numpy as np
 
-#################
+#######################################################################################################################
 ### Vanonni CODE
 #################
 
-### recurse
+### recurse ############################################################################################################
 
 def recurse(*tokens):
     children = []
@@ -66,7 +66,7 @@ def recurse(*tokens):
 
     return children
 
-### get_branch
+### get_branch ##########################################################################################################
 
 def get_branch(t,sent,include_self=True):
     branch = recurse(t)
@@ -88,7 +88,7 @@ def get_branch(t,sent,include_self=True):
 
     return lemmas, tags, deps
 	
-### parse_by_subject
+### parse_by_subject ##############################################################################################################
 
 def parse_by_subject(sent):
 
@@ -196,7 +196,7 @@ def parse_by_subject(sent):
 
     return datalist
 
-### Dependancies
+### Dependancies #####################################################################################################
 
 subdeps = ['nsubj','nsubjpass', 'expl', 'csubj']
 objdeps = ['dobj','dative', 'iobj']
@@ -239,7 +239,7 @@ nonobjdeps = ['nsubj','nsubjpass',
               'ccomp',
               'acomp']
 
-### extract_grammar
+### extract_grammar #######################################################################################################################
 
 voldata = []
 
@@ -261,11 +261,11 @@ def extract_grammar(txt):
         return statements
 pd.to_pickle(voldata,outfile)
 
-################
+#############################################################################################################################
 ### Ambrose CODE
 ################
 
-### extract_grammer_complexity
+### extract_grammer_complexity ##############################################################################################
 
 from re import I
 def extract_grammer_complexity(txt):
@@ -543,10 +543,10 @@ def extract_grammer_complexity(txt):
 
     return clean_data
 
-### extract_grammer_complexity_dataset 
+### extract_grammer_complexity_dataset #############################################################################################
 
 from re import I
-def extract_grammer_complexity_dataset(dataset, s):
+def extract_grammer_complexity_dataset(dataset, id, s):
 
   clean_data = pd.DataFrame(columns = ['ID', 'Statement', "Main Attribute", "Attributes Count", "Attributes Conjunction", "Coord. Actor", "Coord. Actor Count", "Deontic", "Negative", "Task", "Task Count", "Task Conjunction","Condition" ,"Condition Count", "Condition Conjunction"]) #, "Institutional State Complexity", "Institutional Regimentation"])
   sentence_num = 0
@@ -554,6 +554,7 @@ def extract_grammer_complexity_dataset(dataset, s):
   for x in range(len(dataset)):
       #print(dataset.iloc[x][s])
       txt = (dataset.iloc[x][s])
+      ID = (dataset.iloc[x][id])
 
 
       ##############
@@ -822,13 +823,13 @@ def extract_grammer_complexity_dataset(dataset, s):
               # append rows to an empty DataFrame
               ####################################
 
-              clean_data = clean_data._append({'ID':sentence_num, 'Statement':txt, "Main Attribute":Att, "Attributes Count":Att_Count, "Attributes Conjunction":Att_Conj, "Coord. Actor":Actors, "Coord. Actor Count":Actor_Count, "Deontic":Deon, "Negative":Neg, "Task":Aim, "Task Count":Aim_Count, "Task Conjunction":Aim_Conj, "Condition":Con , "Condition Count":Con_Count, "Condition Conjunction":Con_Conj}, ignore_index=True) #, "Institutional State Complexity":ISC, "Institutional Regimentation":IReg}, ignore_index=True)
+              clean_data = clean_data._append({'ID':ID, 'Statement':txt, "Main Attribute":Att, "Attributes Count":Att_Count, "Attributes Conjunction":Att_Conj, "Coord. Actor":Actors, "Coord. Actor Count":Actor_Count, "Deontic":Deon, "Negative":Neg, "Task":Aim, "Task Count":Aim_Count, "Task Conjunction":Aim_Conj, "Condition":Con , "Condition Count":Con_Count, "Condition Conjunction":Con_Conj}, ignore_index=True) #, "Institutional State Complexity":ISC, "Institutional Regimentation":IReg}, ignore_index=True)
               #print('ID:', sentence_num, 'Statem:', sent, "Attributes Count:", Att_Count, "Attributes Conjunction:", Att_Conj, "Deontic:", Deon, "Negative:", Neg,, "Aim Count:", Aim_Count, "Aim Conjunction:", Aim_Conj, "Condition Count:", Con_Count, "Condition Conjunction:", Con_Conj)
               #print(" ")
 
   return clean_data
 
-######################
+######################################################################################################################
 ### CLEANING FUNCTIONS
 ######################
 
