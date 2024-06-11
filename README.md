@@ -57,12 +57,12 @@ A dataframe with columns:
 
 ## Data Construction
 
-A function to added with dataframe construction.
+A function to aid with dataframe construction.
 
 ### construct_dataset
 This is a function that takes a variably framed dataframe and conforms it to the structure useful in the above functions.
 
-    construct_dataset(data,id,new_year,old_year)
+    construct_dataset(data,id,txt)
 
 Where:
   - *data* is the name of the dataframe
