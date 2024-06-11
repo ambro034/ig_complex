@@ -8,7 +8,11 @@ setup(
   author_name = 'Graham W. Ambrose',
   license = 'unlicense',
   package = ['igcomplex'],
-  install_requires=['spacy']
+  install_requires=['spacy',
+                   'svglib',
+                   'pandas',
+                   'pandas',
+                   'python-Levenshtein']
   
 )
   
