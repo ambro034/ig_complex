@@ -12,7 +12,8 @@ setup(
                    'svglib',
                    'pandas',
                    'pandas',
-                   'python-Levenshtein']
+                   'python-Levenshtein',
+                   'fuzzywuzzy']
   
 )
   
