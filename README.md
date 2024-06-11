@@ -39,11 +39,12 @@ A dataframe with columns:
 ### extract_grammer_complexity_dataset
 This is a function that bridges IG outputs and the complexity elements, with an input of a dataframe where each row is a statements. 
 
-    extract_grammer_complexity_dataset(dataset, s)
+    extract_grammer_complexity_dataset(dataset, id, s)
 
 Where:
   - *dataset* is the dataframe passed to the function
-  - *s* is the column where the text to be passes to the function is positioned
+  - *id* is the column position for the statement id to be passes to the function
+  - *s* is the column position for the text to be passes to the function
     
 Output structure:  
 A dataframe with columns:  
@@ -67,33 +68,68 @@ This is a function that takes a variably framed dataframe and conforms it to the
 Where:
   - *data* is the name of the dataframe
   - *id* is the column position for Statement IDs in the dataframe
-  - *new_year* is the column position for Statement #1 in the dataframe
-  - *old_year* is the column position for Statement #2 in the dataframe
+  - *txt* is the column position for the statment text in the dataframe
     
 
-## Additional Reuse Functions
+## Additional Data Cleaning Functions
 
 These functions are nested into the 'practical functions above, but can be used indamendently if needed.
 
-### id_reuse
-This is a function that identifies the longest stretch of words that are shared between to statements passed to the function. This function optimizes (i.e., finds the longest stretch of words), but does not return all reused words if there are two or more chuncks of text that are reused. 
+### clean_format
+This is a function that removes listed formatting (i.e., “(1)” or “[a]”)
 
-    id_reuse(str1,str2,l)
-
-Where:
-  - *str1* is the first string of text passed to the function
-  - *str2* is the second string of text passed to the function
-  - *l* is the minimum n-gram length the function is observing (i.e., l = 2, two-word chucks)
-
-### reuse_loops2
-This is a function that identifies all stretchs of words that are shared between to statements passed to the function. This function first optimizes (i.e., finds the longest stretch of words), loops through the text untill all text chuncks of size *l* are found. 
-
-    reuse_loops2(str1,str2,l)
+    clean_format(dataset, s)
 
 Where:
-  - *str1* is the first string of text passed to the function
-  - *str2* is the second string of text passed to the function
-  - *l* is the minimum n-gram length the function is observing (i.e., l = 2, two-word chucks)
+  - *dataset* is the dataset passed to the function
+  - *s* is the column position of the text in the dataset
+    
+### clean_split_period
+This is a function that splits cells in the dataset by the period (i.e., “.”)
+
+    clean_split_period(dataset,s)
+
+Where:
+  - *dataset* is the dataset passed to the function
+  - *s* is the column position of the text in the dataset
+    
+### clean_split_semicolon
+This is a function that splits cells in the dataset by the semicolon (i.e., “;”)
+
+    clean_split_semicolon(dataset,s)
+
+Where:
+  - *dataset* is the dataset passed to the function
+  - *s* is the column position of the text in the dataset
+    
+### clean_split_X
+This is a flexible function that splits cells in the dataset by the *split_term*
+
+    clean_split_X(dataset, s, split_term)
+
+Where:
+  - *data* is the dataset passed to the function
+  - *s* is the column position of the text in the dataset
+  - *split_term* can be any character – but regular expression is recommended (see:[re — Regular expression operations](https://docs.python.org/3/library/re.html )
+    
+### merge_statements
+This is a function that merges all of the cells within a column into one allowing for more regular splitting rather than the splitting offered by the original text.
+
+    merge_statements(dataset, s)
+
+Where:
+  - *data* is the dataset passed to the function
+  - *s* is the column position of the text in the dataset
+
+### reset_index
+After merging and splitting, it is recommended to reindex the rows of your dataframe allowing for cleaner recalls in future steps.
+
+    reset_index(dataset, s)
+
+Where:
+  - *data* is the dataset passed to the function
+  - *s* is the column position of the text in the dataset
+    
 
 ### Examples
 
