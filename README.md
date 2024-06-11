@@ -125,7 +125,6 @@ After merging and splitting, it is recommended to reindex the rows of your dataf
 Where:
   - *data* is the dataset passed to the function
     
-
 ### Examples
 
     # Set up
@@ -134,22 +133,18 @@ Where:
     import pandas as pd
     
     # Load Data
-    data = pd.read_csv(fake_data.csv, encoding='cp1252')
+    data = pd.read_csv(Arkansas_2001_1.csv, encoding="utf8")
     data.info()
 
-    # Two Statements from Strings
-    s1 = "In this case, the public utilities commission shall consult with the energy commission in calculating market prices and establishing other renewable portfolio standard policies--for this is the right thing."
-    s2 = "The public utilities commission shall consult with the energy commission in establishing renewable portfolio standard policies, but this is the right thing."
+    # Converst the data into the standard structure for the package
+    y = igc.construct_dataset(data,0,1)
+    y
 
-    id_reuse(s1,s2,2)
+#### Clean Dataset options
 
-    reuse_color_coded(s1,s2,2)
-
-    # Construct Data
-    mydata = tr.construct_dataset(data,0,1,2)
-
-    #Run Dataframe to Dataframe
-    tr.reuse_dataset_to_dataset(mydata,0,2,1,2)
+    # Remove formating related to policy structure
+    igc.clean_format(y, 1)
+    y
 
     
 ## Built With
