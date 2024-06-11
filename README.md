@@ -140,13 +140,40 @@ Where:
     y = igc.construct_dataset(data,0,1)
     y
 
-#### Clean Dataset options
+#### Remove formating related to policy structure
 
-    # Remove formating related to policy structure
     igc.clean_format(y, 1)
     y
 
+#### Options for splitting and merging text
+
+While the dataframe *y* is preprocessed to represent policy text that does not need to be further split or merged, the following examples are offered.
+First, *merge_statements* merges all of the text into one row of data. As such, the first 'Statement ID' will be maintained.
+Second and third, the single statement in *df* is split on each period and semicolon observed in the text. It is important to note that the same 'Statement ID' is now split over all rows.
+Fourth, a flexible split is executed when 'means' is obseved in the text -- while this is rather pointless, it is done to show the functionality of the function.
+Fifth, when merging or splitting, the dataframe must be reindexed before being passed to additional functions. If it is not reindexed, multiple statements could be passed to the function where the function is expecting one statement. 
+
+    df = igc.merge_statements(y)
     
+    ysplit1 = igc.clean_split_period(df)
+    ysplit2 = igc.clean_split_semicolon(df)
+    ysplit3 = igc.clean_split_X(df, 'means')
+
+    ysplit3=igc.reset_index(ysplit3)
+
+#### Extract from single statement  
+
+    # Extract from a dataset
+    igc.extract_grammer_complexity(y['Statements'][11])
+
+    # Extract from a string
+    igc.extract_grammer_complexity('I and Juan must play and watch lacrosse, if it is nice and sunny.')
+
+#### Extract from a dataset 
+
+    # Extract from a dataset
+    igc.extract_grammer_complexity_dataset(y,0,1)  
+
 ## Built With
 
   - [Contributor Covenant](https://www.contributor-covenant.org/) - Used
