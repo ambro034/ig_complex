@@ -18,15 +18,15 @@ All of the functions that are identified below can be installed and imported giv
 
 ## Practical Complexity Functions
 
-### reuse_color_coded
-This is a function that bridges IG outputs and the complexity elements. 
+### extract_grammer_complexity
+This is a function that bridges IG outputs and the complexity elements, with an input of a single statements. 
 
     extract_grammer_complexity(txt)
 
 Where:
   - *txt* is the text passed to the function
 
-Output structure:
+Output structure:  
 A dataframe with columns:  
 ['ID', 'Statement',  
 "Main Attribute", "Attributes Count", "Attributes Conjunction",  
@@ -36,29 +36,23 @@ A dataframe with columns:
 "Condition", "Condition Count", "Condition Conjunction"]
 
 
-### reuse_color_coded_dataset
-This is a function returns pairs of statements from a dataframe, color-coded based on their reuse; where, black text is 'reused' between the two statements, green text is 'added' between statement #1 and statement #2, and red text is 'terminated' between statement #1 and statement #2. Statement #1 is assumed to temporally proceed statement #2.
+### extract_grammer_complexity_dataset
+This is a function that bridges IG outputs and the complexity elements, with an input of a dataframe where each row is a statements. 
 
-    reuse_color_coded_dataset(data,id,new_year,old_year,l)
-
-Where:
-  - *data* is the name of the dataframe
-  - *id* is the column position for Statement IDs in the dataframe
-  - *new_year* is the column position for Statement #1 in the dataframe
-  - *old_year* is the column position for Statement #2 in the dataframe
-  - *l* is the minimum n-gram length the function is observing (i.e., l = 2, two-word chucks)
-
-### reuse_dataset_to_dataset
-This is a function returns pairs of statements from a dataframe, to a new dataframe representing the new statement, the added text, the reused test, the terminated text, and the old statement. For the added text, the reused test, the terminated text -- text is reported sequentially, so '[...]' are inserted where text is not sequentually relevent.
-
-    reuse_color_coded_dataset(data,id,new_year,old_year,l)
+    extract_grammer_complexity_dataset(dataset, s)
 
 Where:
-  - *data* is the name of the dataframe
-  - *id* is the column position for Statement IDs in the dataframe
-  - *new_year* is the column position for Statement #1 in the dataframe
-  - *old_year* is the column position for Statement #2 in the dataframe
-  - *l* is the minimum n-gram length the function is observing (i.e., l = 2, two-word chucks)
+  - *dataset* is the dataframe passed to the function
+  - *s* is the column where the text to be passes to the function is positioned
+    
+Output structure:  
+A dataframe with columns:  
+['ID', 'Statement',  
+"Main Attribute", "Attributes Count", "Attributes Conjunction",  
+"Coord. Actor", "Coord. Actor Count",  
+"Deontic", "Negative",  
+"Task", "Task Count", "Task Conjunction",  
+"Condition", "Condition Count", "Condition Conjunction"]
 
 
 ## Data Construction
