@@ -13,7 +13,7 @@
 ### SET UP
 #############
 
-pip install spacy
+%pip install spacy
 
 import spacy
 import pandas as pd
