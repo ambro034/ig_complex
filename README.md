@@ -87,52 +87,52 @@ Where:
 ### clean_split_period
 This is a function that splits cells in the dataset by the period (i.e., “.”)
 
-    clean_split_period(dataset,s)
+    clean_split_period(dataset)
 
 Where:
   - *dataset* is the dataset passed to the function
-  - *s* is the column position of the text in the dataset
     
 ### clean_split_semicolon
 This is a function that splits cells in the dataset by the semicolon (i.e., “;”)
 
-    clean_split_semicolon(dataset,s)
+    clean_split_semicolon(dataset)
 
 Where:
   - *dataset* is the dataset passed to the function
-  - *s* is the column position of the text in the dataset
     
 ### clean_split_X
 This is a flexible function that splits cells in the dataset by the *split_term*
 
-    clean_split_X(dataset, s, split_term)
+    clean_split_X(dataset, split_term)
 
 Where:
   - *data* is the dataset passed to the function
-  - *s* is the column position of the text in the dataset
   - *split_term* can be any character – but regular expression is recommended (see:[re — Regular expression operations](https://docs.python.org/3/library/re.html )
     
 ### merge_statements
 This is a function that merges all of the cells within a column into one allowing for more regular splitting rather than the splitting offered by the original text.
 
-    merge_statements(dataset, s)
+    merge_statements(dataset)
 
 Where:
   - *data* is the dataset passed to the function
-  - *s* is the column position of the text in the dataset
 
 ### reset_index
 After merging and splitting, it is recommended to reindex the rows of your dataframe allowing for cleaner recalls in future steps.
 
-    reset_index(dataset, s)
+    reset_index(dataset)
 
 Where:
   - *data* is the dataset passed to the function
-  - *s* is the column position of the text in the dataset
     
 
 ### Examples
 
+    # Set up
+    !pip install "git+https://github.com/ambro034/ig_complex.git"
+    import ig_complex as igc
+    import pandas as pd
+    
     # Load Data
     data = pd.read_csv(fake_data.csv, encoding='cp1252')
     data.info()
