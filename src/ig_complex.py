@@ -68,6 +68,28 @@ def recurse(*tokens):
 
 ### get_branch
 
+def get_branch(t,sent,include_self=True):
+    branch = recurse(t)
+    if include_self:
+        branch += [t]
+    branch = [w for w in sent if w in branch]# and w.dep_ in include]
+
+    #print(branch)
+
+    lemmas = []
+    tags = []
+    deps = []
+
+    for token in branch:
+        lemma = token.lemma_.lower()
+        lemmas.append(lemma)
+        tags.append(token.tag_)
+        deps.append(token.dep_)
+
+    return lemmas, tags, deps
+	
+### parse_by_subject
+
 def parse_by_subject(sent):
 
     subjects = [t for t in sent if t.dep_ in subdeps]
