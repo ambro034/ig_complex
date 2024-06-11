@@ -15,7 +15,7 @@
 
 #pip install pip setuptools wheel
 #pip install spacy
-python -m spacy download en
+#python -m spacy download en
 #pip install svglib
 #pip install pandas
 #pip install fuzzywuzzy
