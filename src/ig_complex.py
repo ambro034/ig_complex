@@ -442,11 +442,11 @@ def extract_grammer_complexity(txt):
                 for Object_state in Object_states:
                   i += 1
                   dub_counted_list.append(Object_state)
-                  if statement['Object_deps'][x][i] in ['prep'] and statement['Object_tags'][x][i] in ['IN']:
-                    #print(statement['Object_properties'][x][i:])
-                    #print(statement['Object_tags'][x][i:])
-                    #print(statement['Object_deps'][x][i:])
-                    #print('')
+            #      if statement['Object_deps'][x][i] in ['prep'] and statement['Object_tags'][x][i] in ['IN']:
+            #        #print(statement['Object_properties'][x][i:])
+            #        #print(statement['Object_tags'][x][i:])
+            #        #print(statement['Object_deps'][x][i:])
+            #        #print('')
 
             #      if Object_state in ['NN', 'NNP', 'PRP']:
             #        if statement['Object_deps'][x][i] in ['pobj','conj']:  # not in ['npadvmod', 'acl']: # noun is not a 'noun phrase as adverbial modifier' or 'clausal modifier of noun
