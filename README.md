@@ -5,9 +5,16 @@ One Paragraph of the project description
 
 ## Getting Started
 
-These instructions will give you a copy of the project up and running on
-your local machine for development and testing purposes. See deployment
-for notes on deploying the project on a live system.
+These instructions will outline installation, a description of the functions, as well as identify examples.
+
+# Table of Contents
+1. [Installing](#Installing)
+2. [Functions](#Functions)
+   - [Practical Complexity Functions](#Practical-Complexity-Functions)
+   - [Data Construction](#Data-Construction)
+   - [Additional Data Cleaning Functions](#Additional-Data-Cleaning-Functions)
+3. [Examples](#Examples)
+4. [Other Stuff](#Built-With)
 
 ### Installing
 
@@ -16,9 +23,11 @@ All of the functions that are identified below can be installed and imported giv
     !pip install "git+https://github.com/ambro034/ig_complex.git"
     import ig_complex as igc
 
-## Practical Complexity Functions
+## Functions
 
-### extract_grammer_complexity
+### Practical Complexity Functions
+
+#### extract_grammer_complexity
 This is a function that bridges IG outputs and the complexity elements, with an input of a single statements. 
 
     extract_grammer_complexity(txt)
@@ -36,7 +45,7 @@ A dataframe with columns:
 "Condition", "Condition Count", "Condition Conjunction"]
 
 
-### extract_grammer_complexity_dataset
+#### extract_grammer_complexity_dataset
 This is a function that bridges IG outputs and the complexity elements, with an input of a dataframe where each row is a statements. 
 
     extract_grammer_complexity_dataset(dataset, id, s)
@@ -56,11 +65,11 @@ A dataframe with columns:
 "Condition", "Condition Count", "Condition Conjunction"]
 
 
-## Data Construction
+### Data Construction
 
 A function to aid with dataframe construction.
 
-### construct_dataset
+#### construct_dataset
 This is a function that takes a variably framed dataframe and conforms it to the structure useful in the above functions.
 
     construct_dataset(data,id,txt)
@@ -71,11 +80,11 @@ Where:
   - *txt* is the column position for the statment text in the dataframe
     
 
-## Additional Data Cleaning Functions
+### Additional Data Cleaning Functions
 
 These functions are nested into the 'practical functions above, but can be used indamendently if needed.
 
-### clean_format
+#### clean_format
 This is a function that removes listed formatting (i.e., “(1)” or “[a]”)
 
     clean_format(dataset, s)
@@ -84,7 +93,7 @@ Where:
   - *dataset* is the dataset passed to the function
   - *s* is the column position of the text in the dataset
     
-### clean_split_period
+#### clean_split_period
 This is a function that splits cells in the dataset by the period (i.e., “.”)
 
     clean_split_period(dataset)
@@ -92,7 +101,7 @@ This is a function that splits cells in the dataset by the period (i.e., “.”
 Where:
   - *dataset* is the dataset passed to the function
     
-### clean_split_semicolon
+#### clean_split_semicolon
 This is a function that splits cells in the dataset by the semicolon (i.e., “;”)
 
     clean_split_semicolon(dataset)
@@ -100,7 +109,7 @@ This is a function that splits cells in the dataset by the semicolon (i.e., “;
 Where:
   - *dataset* is the dataset passed to the function
     
-### clean_split_X
+#### clean_split_X
 This is a flexible function that splits cells in the dataset by the *split_term*
 
     clean_split_X(dataset, split_term)
@@ -109,7 +118,7 @@ Where:
   - *data* is the dataset passed to the function
   - *split_term* can be any character – but regular expression is recommended (see: [re — Regular expression operations](https://docs.python.org/3/library/re.html))
     
-### merge_statements
+#### merge_statements
 This is a function that merges all of the cells within a column into one allowing for more regular splitting rather than the splitting offered by the original text.
 
     merge_statements(dataset)
@@ -117,7 +126,7 @@ This is a function that merges all of the cells within a column into one allowin
 Where:
   - *data* is the dataset passed to the function
 
-### reset_index
+#### reset_index
 After merging and splitting, it is recommended to reindex the rows of your dataframe allowing for cleaner recalls in future steps.
 
     reset_index(dataset)
@@ -125,7 +134,7 @@ After merging and splitting, it is recommended to reindex the rows of your dataf
 Where:
   - *data* is the dataset passed to the function
     
-### Examples
+#### Examples
 
     # Set up
     !pip install "git+https://github.com/ambro034/ig_complex.git"
