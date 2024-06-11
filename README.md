@@ -27,13 +27,13 @@ Where:
   - *txt* is the text passed to the function
 
 Output structure:
-A dataframe with columns:
-item ['ID', 'Statement', 
-item "Main Attribute", "Attributes Count", "Attributes Conjunction", 
-item "Coord. Actor", "Coord. Actor Count", 
-item "Deontic", "Negative", 
-item "Task", "Task Count", "Task Conjunction",
-item "Condition", "Condition Count", "Condition Conjunction"]
+A dataframe with columns:  
+['ID', 'Statement',  
+"Main Attribute", "Attributes Count", "Attributes Conjunction",  
+"Coord. Actor", "Coord. Actor Count",  
+"Deontic", "Negative",  
+"Task", "Task Count", "Task Conjunction",  
+"Condition", "Condition Count", "Condition Conjunction"]
 
 
 ### reuse_color_coded_dataset
