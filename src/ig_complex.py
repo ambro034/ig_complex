@@ -13,13 +13,13 @@
 ### SET UP
 #############
 
-!pip install pip setuptools wheel
-!pip install spacy
-!python -m spacy download en
-!pip install svglib
-!pip install pandas
-!pip install fuzzywuzzy
-!pip install python-Levenshtein
+pip install pip setuptools wheel
+pip install spacy
+python -m spacy download en
+pip install svglib
+pip install pandas
+pip install fuzzywuzzy
+pip install python-Levenshtein
 
 import spacy
 import pandas as pd
