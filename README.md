@@ -16,17 +16,25 @@ All of the functions that are identified below can be installed and imported giv
     !pip install "git+https://github.com/ambro034/ig_complex.git"
     import ig_complex as igc
 
-## Practical Reuse Functions
+## Practical Complexity Functions
 
 ### reuse_color_coded
-This is a function returns two statements, color-coded based on their reuse; where, black text is 'reused' between the two statements, green text is 'added' between statement #1 and statement #2, and red text is 'terminated' between statement #1 and statement #2. Statement #1 is assumed to temporally proceed statement #2. 
+This is a function that bridges IG outputs and the complexity elements. 
 
-    reuse_color_coded(str1,str2,l)
+    extract_grammer_complexity(txt)
 
 Where:
-  - *str1* is the first string of text passed to the function
-  - *str2* is the second string of text passed to the function
-  - *l* is the minimum n-gram length the function is observing (i.e., l = 2, two-word chucks)
+  - *txt* is the text passed to the function
+
+Output structure:
+A dataframe with columns:
+['ID', 'Statement', 
+"Main Attribute", "Attributes Count", "Attributes Conjunction", 
+"Coord. Actor", "Coord. Actor Count", 
+"Deontic", "Negative", 
+"Task", "Task Count", "Task Conjunction",
+"Condition", "Condition Count", "Condition Conjunction"]
+
 
 ### reuse_color_coded_dataset
 This is a function returns pairs of statements from a dataframe, color-coded based on their reuse; where, black text is 'reused' between the two statements, green text is 'added' between statement #1 and statement #2, and red text is 'terminated' between statement #1 and statement #2. Statement #1 is assumed to temporally proceed statement #2.
