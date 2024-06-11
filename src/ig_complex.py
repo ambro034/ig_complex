@@ -443,7 +443,7 @@ def extract_grammer_complexity(txt):
                   i += 1
                   dub_counted_list.append(Object_state)
                   if statement['Object_deps'][x][i] in ['prep'] and statement['Object_tags'][x][i] in ['IN']:
-                    print(statement['Object_properties'][x][i:])
+                    #print(statement['Object_properties'][x][i:])
                     #print(statement['Object_tags'][x][i:])
                     #print(statement['Object_deps'][x][i:])
                     #print('')
