@@ -13,7 +13,8 @@
 ### SET UP
 #############
 
-!pip install spacy
+!pip install -U pip setuptools wheel
+!pip install  -U spacy
 !python -m spacy download en
 !pip install svglib
 !pip install pandas
