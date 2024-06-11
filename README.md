@@ -107,7 +107,7 @@ This is a flexible function that splits cells in the dataset by the *split_term*
 
 Where:
   - *data* is the dataset passed to the function
-  - *split_term* can be any character – but regular expression is recommended (see: [re — Regular expression operations](https://docs.python.org/3/library/re.html )
+  - *split_term* can be any character – but regular expression is recommended (see: [re — Regular expression operations](https://docs.python.org/3/library/re.html))
     
 ### merge_statements
 This is a function that merges all of the cells within a column into one allowing for more regular splitting rather than the splitting offered by the original text.
