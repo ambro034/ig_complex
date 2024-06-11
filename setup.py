@@ -7,7 +7,8 @@ setup(
   url = 'https://github.com/ambro034/text_reuse.git',
   author_name = 'Graham W. Ambrose',
   license = 'unlicense',
-  package = ['igcomplex']
+  package = ['igcomplex'],
+  install_requires=['spacy']
   
 )
   
