@@ -13,6 +13,8 @@
 ### SET UP
 #############
 
+pip install spacy
+
 import spacy
 import pandas as pd
 from spacy.lang.en import English
