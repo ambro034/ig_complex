@@ -19,9 +19,11 @@ The syntactic components bridge -- more or less -- directly with the complexity 
   - *Task Count* -- a count of *Task*
   - *Task Conjunction* -- the conjunction used for *Task* if count is greater than one. This identifies logical AND or OR.
   - *Condition* -- is a list of contexts caluse(s) that condition the perscription for the actors to carry out the task. Both Activation Conditions (Cac) and Execution Constraints (Cex) are identified.
-  - *Condition Count* -- a count of *Condition*. This returns both a count of the context clauses, as well as the number of conditions within the clauses. For example, consider the following statement:  
-  <center> "When notice is given, the departments may modify the regulations, if the outcomes of such change are determined to be economically or socailly beneficial." </center> 
-  *When notice is given* and *if the outcomes of such change are determined to be economically or socailly beneficial.* are two context clauses, but the latter has two conditions -- (1) *economically* or (2) *socailly*. This results in a condition count of three.
+  - *Condition Count* -- a count of *Condition*. This returns both a count of the context clauses, as well as the number of conditions within the clauses. For example, consider the following statement:
+      
+    "When notice is given, the departments may modify the regulations, if the outcomes of such change are determined to be economically or socailly beneficial."
+      
+    *When notice is given* and *if the outcomes of such change are determined to be economically or socailly beneficial.* are two context clauses, but the latter has two conditions -- (1) *economically* or (2) *socailly*. This results in a condition count of three.
   - *Condition Conjunction* -- the conjunction used for *Condition* if the condition count within a context cluase is greater than one. This identifies logical AND or OR.
 
 ## Getting Started
