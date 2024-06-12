@@ -1,7 +1,25 @@
 # ig_complex
 ## Python functions for evaluating the complexity within policy statements.
 
-One Paragraph of the project description
+This package uses the Institutional Grammar (IG) as a tool to measure policy complexity at the micro-level. While the practical use of the IG as a tool will be discussed here, a more in-depth discussion of its development, application, and use can be found here: [Crawford and Ostrom 1995](https://www.cambridge.org/core/journals/american-political-science-review/article/grammar-of-institutions/7D37CD3BC5ED2D9FD57D2EE292958F47); [Frantz and Siddiki 2021](https://onlinelibrary.wiley.com/doi/full/10.1111/padm.12719); [Siddiki et al 2022](https://onlinelibrary.wiley.com/doi/full/10.1111/psj.12361), [Siddiki and Frantz 2023](https://onlinelibrary.wiley.com/doi/full/10.1111/rego.12546). The IG offers a rigorous and generalizable methodology for examining the information conveyed by institutional statements, or the individual statements that make up policies.  
+At the institutional statement level, the IG allows the identification of the statements’ institutional type as constitutive or regulative (Siddiki and Frantz 2023). *Constitutive statements* are statements parameterizing features of systems in which actors interact, whereas *regulative statements* are statements describing expected behavior(s) of actors in the presence or absence of constraints. While *ig_complex* is built to evaluate regulative statements, it can successfully examine constitutive statements.  
+The syntactic components for regulative statements, include: (i) Attribute: an actor that carries out, or is expected to/to not carry out the action of the statement; (ii) Object: the inanimate or animate part of statement that is the receiver of the action of the statement; (iii) Deontic: a prescriptive or permissive operator that defines to what extent the action of a statement is compelled, restrained, or discretionary; (iv) Aim: the action of the statement that is assigned to the statement actor; (v) Context: condition(s) instantiating settings in which the statement applies, or constraint(s) qualifying action of the statement; (vi) Or else: an incentive linked to the statement action. Objects can be further delineated as direct and indirect following defining characteristics of such according with English grammar. The different types of Contexts (i.e., of instantiating or qualifying kind) are delineated as Activation Conditions (Cac) and Execution Constraints (Cex). Finally, the classification of Attributes and Objects can account for actors and objects and properties (i.e., descriptors) of those (Crawford and Ostrom 1995; Frantz and Siddiki 2022).  
+The syntactic components bridge -- more or less -- directly with the complexity outputs produced by *ig_complex*. 
+  -*Main Attribute* -- is a list of attribute(s) that are perscribed to carry out the task.
+  -*Attributes Count* -- a count of *Main Attribute*
+  -*Attributes Conjunction* -- the conjunction used for *Main Attribute* if count is greater than one. This identifies logical AND or OR.
+  -*Coordinating Actor* -- is a list of all actors engaged in the statements. This includes the Attribute(s) as well as additional coordinating actors in other portions of the statements. (*this code is still being developed*)
+  -*Coordinating Actor Count* -- a count of *Coordinating Actor*. (*this code is still being developed*)
+  -*Deontic* -- i as identified above.
+  -*Negative* -- is used to identify the negation of the deontic
+  -*Task* -- is a list of task(s) that are to be carry out the attribute. This reports the aIms within the statement.
+  -*Task Count* -- a count of *Task*
+  -*Task Conjunction* -- the conjunction used for *Task* if count is greater than one. This identifies logical AND or OR.
+  -*Condition* -- is a list of contexts caluse(s) that condition the perscription for the actors to carry out the task. Both Activation Conditions (Cac) and Execution Constraints (Cex) are identified.
+  -*Condition Count* -- a count of *Condition*. This returns both a count of the context clauses, as well as the number of conditions within the clauses. For example, consider the following statement:  
+  "When notice is given, the departments may modify the regulations, if the outcomes of such change are determined to be economically or socailly beneficial."  
+  *When notice is given* and *if the outcomes of such change are determined to be economically or socailly beneficial.* are two context clauses, but the latter has two conditions -- (1) *economically* or (2) *socailly*. This results in a condition count of three.
+  -*Condition Conjunction* -- the conjunction used for *Condition* if the condition count within a context cluase is greater than one. This identifies logical AND or OR.
 
 ## Getting Started
 
