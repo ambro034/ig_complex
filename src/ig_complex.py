@@ -619,14 +619,14 @@ def extract_grammer_complexity_dataset(dataset, id, s):
                     n_txt = n_txt.replace(str(statement['Object_properties'][x][i]), "")
 
                     # Aims Conjunction                # Only count conj. if additional aims are detected
-                    x = -1
+                    n = -1
                     for ele in range(len(statement['Object_tags'])):
-                      x += 1
-                      Aim_state = statement['Object_tags'][x]
+                      n += 1
+                      Aim_state = statement['Object_tags'][n]
                       try:
-                        i = Aim_state.index("CC")
-                        Aim_Conj = statement['Object_properties'][x][i]
-                        #txt = txt.replace(str(statement['Object_properties'][x][i]), "")
+                        z = Aim_state.index("CC")
+                        Aim_Conj = statement['Object_properties'][n][z]
+                        #txt = txt.replace(str(statement['Object_properties'][n][z]), "")
                       except ValueError:
                         skip = 1
 
