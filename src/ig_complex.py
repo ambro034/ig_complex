@@ -776,7 +776,7 @@ def extract_grammer_complexity_dataset(dataset, id, s):
                     continue
                 elif statement['Condition_tags'][list_num][0] == "TO" and statement['Condition_tags'][list_num][1] == "VB":
                   continue
-		else:
+                else:
                     Con_Count += 1
                     if statement['Condition'][list_num] not in Con:
                       Con.append(statement['Condition'][list_num])
