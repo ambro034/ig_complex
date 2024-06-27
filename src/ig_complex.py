@@ -486,9 +486,9 @@ def extract_grammer_complexity(txt):
 
               if len(statement['Condition'][list_num]) < 3: # don't count miss-splitting of conjunctions
                   continue
-              elif statement['Condition_tags'][list_num][0] == "TO" and statement['Condition_tags'][list_num][1] == "VB":
+              elif statement['Condition_tags'][list_num][0] == "TO" and statement['Condition_tags'][list_num][1] == "VB": ####
                   continue
-	      else:
+              else:
                   Con_Count += 1
                   if statement['Condition'][list_num] not in Con:
                     Con.append(statement['Condition'][list_num])
